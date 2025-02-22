@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyBU01FuM1e2mz43-BVvfJG_oFsbh7fw8jM";
+
+const API_KEY = import.meta.env.API_KEY;
+
 
 const Chatbot = () => {
   const [message, setMessage] = useState([]);
