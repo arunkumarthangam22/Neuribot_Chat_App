@@ -2,8 +2,8 @@ import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
-const API_KEY = import.meta.env.API_KEY;
-
+const API_KEY = import.meta.env.VITE_CHAT_API_KEY;
+// console.log(API_KEY);
 
 const Chatbot = () => {
   const [message, setMessage] = useState([]);
@@ -31,6 +31,8 @@ const Chatbot = () => {
         .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Convert Markdown bold to HTML bold
         .replace(/\n/g, "<br />") // Preserve line breaks
         .replace(/- (.*?)\n/g, "• $1<br />"); // Convert lists to bullet points
+
+
 
       setMessage([
         ...newMessages,
